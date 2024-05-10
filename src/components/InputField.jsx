@@ -71,6 +71,7 @@ export const InputField = ({ onClick, isOpen, setIsSaveState, dispatch }) => {
 
     const handleClose = (close=false) => {
         onClick(false);
+        close && alert('data saved')
         !close && setIsSaveState(true);
     };
     const handleChange = (e) => {
@@ -328,7 +329,7 @@ export const InputField = ({ onClick, isOpen, setIsSaveState, dispatch }) => {
             </DialogContent>
             <DialogActions sx={classes.btnContainer}>
                 <Button variant='contained' type='submit'>Create Job</Button>
-                <Button variant='contained' onClick={() => handleClose()}>Save info</Button>
+                <Button variant='contained' onClick={(e)=>handleClose(true)}>Save info</Button>
             </DialogActions>
         </Dialog>
     );
